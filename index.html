@@ -47,16 +47,10 @@
     <!-- Header / Contenedor Principal -->
     <main class="w-full max-w-md mx-auto flex flex-col items-center space-y-6">
 
-        <!-- Logo / Círculo de Perfil Ampliado -->
+        <!-- Logo / Imagen completa sin máscara circular -->
         <div class="flex flex-col items-center space-y-3">
-            <div class="relative group">
-                <!-- Anillo con brillo eléctrico -->
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-fotonBlue to-cyan-500 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                
-                <!-- Círculo Ampliado con object-contain para mostrar la imagen completa -->
-                <div class="relative w-36 h-36 rounded-full bg-fotonCard border-2 border-fotonBorder flex items-center justify-center overflow-hidden shadow-2xl p-3">
-                    <img src="logofoton.png" alt="Logo Yezid Jaramillo" class="w-full h-full object-contain rounded-full">
-                </div>
+            <div class="w-full max-w-[220px] flex items-center justify-center p-2">
+                <img src="logofoton.png" alt="Logo Yezid Jaramillo" class="w-full h-auto object-contain">
             </div>
 
             <!-- Nombre como enlace personal / título -->
