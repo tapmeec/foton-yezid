@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yezid Jaramillo | Link in Bio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fotonDark: '#0A0F1D',
+                        fotonCard: '#131C31',
+                        fotonBlue: '#0066FF',
+                        fotonBlueHover: '#0052CC',
+                        fotonBorder: '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0F1D;
+            background-image: radial-gradient(circle at 50% 0%, #111E38 0%, #0A0F1D 70%);
+        }
+        .glass-card {
+            background: rgba(19, 28, 49, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 102, 255, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 102, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-100 flex flex-col items-center justify-between py-10 px-4 selection:bg-fotonBlue selection:text-white">
+
+    <!-- Header / Contenedor Principal -->
+    <main class="w-full max-w-md mx-auto flex flex-col items-center space-y-6">
+
+        <!-- Logo / Círculo de Perfil Ampliado -->
+        <div class="flex flex-col items-center space-y-3">
+            <div class="relative group">
+                <!-- Anillo con brillo eléctrico -->
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-fotonBlue to-cyan-500 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                
+                <!-- Círculo Ampliado (w-36 h-36) -->
+                <div class="relative w-36 h-36 rounded-full bg-fotonCard border-2 border-fotonBorder flex flex-col items-center justify-center overflow-hidden shadow-2xl p-2 text-center">
+                    <!-- INSTRUCCIÓN PARA GITHUB: Reemplaza o coloca tu imagen aquí -->
+                    <!-- Ejemplo: <img src="URL_DE_TU_LOGO_EN_GITHUB" alt="Logo" class="w-full h-full object-cover rounded-full"> -->
+                    
+                    <div class="flex flex-col items-center justify-center text-slate-400 space-y-1">
+                        <i class="fa-solid fa-image text-3xl text-fotonBlue"></i>
+                        <span class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">Sube tu logo</span>
+                        <span class="text-[9px] text-slate-500 font-mono">(Remplazar en GitHub)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nombre como enlace personal / título -->
+            <a href="#" class="text-2xl font-bold tracking-tight text-white hover:text-fotonBlue transition-colors duration-200 mt-1">
+                Yezid Jaramillo
+            </a>
+            <p class="text-xs text-slate-400 tracking-wide font-medium">Enlace Personal & Contacto</p>
+        </div>
+
+        <!-- Línea separadora sutil -->
+        <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-fotonBlue to-transparent opacity-60"></div>
+
+        <!-- Botones de Enlace (WhatsApp y Correo) -->
+        <div class="w-full space-y-4">
+            
+            <!-- Botón WhatsApp -->
+            <a href="https://wa.me/tu_numero" target="_blank" rel="noopener noreferrer" 
+               class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-white group-hover:text-emerald-400 transition-colors">WhatsApp</h3>
+                        <p class="text-xs text-slate-400">Escríbeme directamente</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Botón Correo -->
+            <a href="mailto:tu_correo@example.com" 
+               class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-fotonBlue/10 border border-fotonBlue/30 flex items-center justify-center text-fotonBlue group-hover:bg-fotonBlue group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-white group-hover:text-fotonBlue transition-colors">Correo Electrónico</h3>
+                        <p class="text-xs text-slate-400">Contáctame por email</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-fotonBlue group-hover:text-white transition-all duration-300">
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Yezid Jaramillo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
