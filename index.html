@@ -85,7 +85,7 @@
                 </div>
             </a>
 
-            <!-- Botón Correo con .com -->
+            <!-- Botón Correo -->
             <a href="mailto:ypjaramillo@fotonecuador.com" 
                class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group">
                 <div class="flex items-center space-x-4">
@@ -102,8 +102,8 @@
                 </div>
             </a>
 
-            <!-- Botón de Exchange Contact -->
-            <a id="exchange-btn" class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group cursor-pointer">
+            <!-- Botón de Exchange Contact (Generador directo nativo) -->
+            <button id="exchange-btn" class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group cursor-pointer text-left">
                 <div class="flex items-center space-x-4">
                     <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-[#0098da] group-hover:bg-[#0098da] group-hover:text-white transition-all duration-300">
                         <i class="fa-solid fa-address-card text-xl"></i>
@@ -116,7 +116,7 @@
                 <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-[#0098da] group-hover:text-white transition-all duration-300">
                     <i class="fa-solid fa-download text-xs"></i>
                 </div>
-            </a>
+            </button>
 
         </div>
 
@@ -127,4 +127,33 @@
         <span class="text-xs text-slate-400 font-medium tracking-wide">Powered by</span>
         <a href="https://wa.me/593999921212" target="_blank" rel="noopener noreferrer" 
            class="w-44 flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
-            <img src="logotapmeblanco.png" alt="Logo Tap Me" class="w-full h-auto
+            <img src="logotapmeblanco.png" alt="Logo Tap Me" class="w-full h-auto object-contain">
+        </a>
+    </footer>
+
+    <!-- Script optimizado para forzar la descarga del VCF en cualquier dispositivo -->
+    <script>
+        document.getElementById('exchange-btn').addEventListener('click', function() {
+            const vcardData = 
+`BEGIN:VCARD
+VERSION:3.0
+FN:YEZID JARAMILLO FOTON
+N:Jaramillo Foton;Yezid;;;
+TEL;TYPE=CELL:+593999921212
+EMAIL:ypjaramillo@fotonecuador.com
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.setAttribute('download', 'Yezid_Jaramillo_Foton.vcf');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        });
+    </script>
+
+</body>
+</html>
