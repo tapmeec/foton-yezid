@@ -85,7 +85,7 @@
                 </div>
             </a>
 
-            <!-- Botón Correo -->
+            <!-- Botón Correo con .com -->
             <a href="mailto:ypjaramillo@fotonecuador.com" 
                class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group">
                 <div class="flex items-center space-x-4">
@@ -102,8 +102,8 @@
                 </div>
             </a>
 
-            <!-- Botón de Exchange Contact (Generador directo nativo) -->
-            <button id="exchange-btn" class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group cursor-pointer text-left">
+            <!-- Botón de Exchange Contact -->
+            <a id="exchange-btn" class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group cursor-pointer">
                 <div class="flex items-center space-x-4">
                     <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-[#0098da] group-hover:bg-[#0098da] group-hover:text-white transition-all duration-300">
                         <i class="fa-solid fa-address-card text-xl"></i>
@@ -116,7 +116,7 @@
                 <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-[#0098da] group-hover:text-white transition-all duration-300">
                     <i class="fa-solid fa-download text-xs"></i>
                 </div>
-            </button>
+            </a>
 
         </div>
 
@@ -131,10 +131,11 @@
         </a>
     </footer>
 
-    <!-- Script optimizado para forzar la descarga del VCF en cualquier dispositivo -->
+    <!-- Script para generar y descargar la tarjeta VCard con el .com -->
     <script>
-        document.getElementById('exchange-btn').addEventListener('click', function() {
-            const vcardData = 
+        document.getElementById('exchange-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const vcard = 
 `BEGIN:VCARD
 VERSION:3.0
 FN:YEZID JARAMILLO FOTON
@@ -143,11 +144,11 @@ TEL;TYPE=CELL:+593999921212
 EMAIL:ypjaramillo@fotonecuador.com
 END:VCARD`;
 
-            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.setAttribute('download', 'Yezid_Jaramillo_Foton.vcf');
+            a.download = 'Yezid_Jaramillo_Foton.vcf';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
